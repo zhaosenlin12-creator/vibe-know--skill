@@ -30,6 +30,29 @@ python engine/get_fonts.py
 
 ---
 
+## 🆕 最新：一条 101 秒的完整成片
+
+[`examples/learn_addiction/`](examples/learn_addiction/) 是一条**从头到尾做完**的片子工程（101 秒，C 夜曲），
+主题是《如何像刷短视频一样对学习上瘾》。它比 `fold_C` / `pigeon_B` 那两个 33 秒开头复杂一整个量级，
+代表了这套 skill 目前能摸到的质量上限，里面有这些可以直接学的做法：
+
+| 做法 | 在哪 |
+|---|---|
+| 手机屏里滚动的信息流（`fr.g({ clip })` 裁切滚动） | `film.js` 开场钩子 |
+| 斯金纳箱 + 累积记录曲线（把"历史"采样成数组再按 t 取） | 第一章 机器 |
+| 多巴胺放电峰（高斯峰 + 峰位从"奖励"移到"信号"） | 第二章 信号 |
+| 盲盒翻面（`fr.g({ s: [sx, 1] })` 非等比缩放） | 第四章 四招 |
+| 断供后的消耗带 + 电量条 | 第五章 断供 |
+| 末句回场：开场那只手机又回来了，这次里面装的是学习 | 答 |
+
+另有 [`examples/helpless/`](examples/helpless/)——《习得性无助》，B 寓言，100 秒完整成片：色块拼的狗当主角，
+「放弃指数」仪表当贯穿全片的尺子，三根归因滑块、三张"怎么解开"的卡片、末尾把那道矮栏原样请回来。B 外观的质量上限看这条。
+
+**做长片的硬经验**（子段必须用 `fade()` 不能用 `ss()`、事件数组、贯穿全片的"尺子"、转场 `K.dips`、渲染顺序、环境坑）
+单独写在 [`references/craft.md`](references/craft.md) 里，开工前先过一遍。
+
+---
+
 ## 👀 看看做出来什么样
 
 | 外观 | 适合讲什么 | 样片 |
@@ -143,6 +166,7 @@ open my_film/renders/final.mp4
 ```
 
 **代码怎么写**？先把 `references/visualization.md` 读完——这是核心：四张表教你怎么把"一个概念"变成"屏上一个观众认得的东西"。然后看 `references/engine.md` 学 API。
+要做 90 秒以上的长片，**再读一遍 `references/craft.md`**——时间轴表、贯穿全片的"尺子"、子段必须用 `fade()`、事件数组、`K.dips` 转场、渲染顺序，全在里面；有一条没守住就会返工。
 
 ---
 
@@ -163,20 +187,22 @@ vibe-know--skill/
 │   └── fonts/             ← 字体目录（运行 get_fonts.py 后才有）
 ├── scripts/
 │   └── new_film.py        ← 一键建工程
-├── references/            ← 7 份参考文档
+├── references/            ← 8 份参考文档
 │   ├── visualization.md   ← 必读：4 条参考片拆解 + 6 种画法 + 找形象
 │   ├── engine.md          ← 引擎 API 速查
+│   ├── craft.md           ← 做长片（90–150 秒）的硬经验与避坑
 │   ├── script.md          ← 文案的量、骨架、句式
 │   ├── worlds.md          ← 两套外观的规格
 │   ├── analysis.md        ← 参考片结构分析
 │   ├── prompts.md         ← 反向提示词（含完整 brief 模板）
 │   └── visual-grammar.md  ← 版式 / 颜色 / 动效 / 转场
-└── examples/              ← 5 个成片 / 拆解对照
-    ├── fold_C/            ← 《折叠》夜曲版
-    ├── pigeon_B/          ← 《鸽子的迷信》寓言版
+└── examples/              ← 6 个工程 / 拆解对照
+    ├── learn_addiction/   ← 🆕 101 秒完整成片《学习上瘾》（当前质量上限）
+    ├── fold_C/            ← 《折叠》夜曲版开头
+    ├── pigeon_B/          ← 《鸽子的迷信》寓言版开头
     ├── info_C/, stim_B/   ← 两条参考片的复刻（学习用）
     ├── kit_gallery/       ← 引擎能力图鉴
-    ├── *.gif, *.jpg       ← 预览
+    └── *.webp, *.jpg      ← 预览
 ```
 
 ---
