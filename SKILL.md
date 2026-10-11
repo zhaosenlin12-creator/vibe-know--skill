@@ -209,4 +209,4 @@ python engine/render.py <工程目录> --jobs 4           # 全片，4 路并行
 | `references/craft.md` | **做 90–150 秒长片的硬经验**：时间轴表、贯穿全片的"尺子"、子段必须用 `fade()` 不能用 `ss()`、事件数组、累积曲线、`fr.g()` 的 clip/非等比缩放、逐字高亮、`K.dips` 转场、事件表配乐、渲染顺序、长片特有的毛病表 |
 | `engine/` | `vk.js` `vk-kit.js` `render.py` `audio.py` `get_fonts.py` |
 | `scripts/new_film.py` | 建工程：`index.html` + 一份没有画面的 `film.js` 骨架 |
-| `examples/` | 看别人怎么做过一次，不是零件库。`learn_addiction`（夜曲 101 秒）、`helpless`（寓言 100 秒）、`entropy`（寓言 100 秒《熵增》）是**三条完整成片**的工程；`fold_C`、`pigeon_B`（各 33 秒开头）：自己题目的样片，各带分镜表；`fold_old_vs_new.jpg`：同一段内容的两版对照；两段对照参考片做的复刻；一张货架图；`look_*.jpg` 是各自的拼图 |
+| `examples/` | 看别人怎么做过一次，不是零件库。`learn_addiction`（夜曲 101 秒）、`helpless`（寓言 100 秒）、`entropy`（寓言 100 秒《熵增》）、`bystander`（寓言 100 秒《旁观者效应》）是**四条完整成片**的工程；`fold_C`、`pigeon_B`（各 33 秒开头）：自己题目的样片，各带分镜表；`fold_old_vs_new.jpg`：同一段内容的两版对照；两段对照参考片做的复刻；一张货架图；`look_*.jpg` 是各自的拼图 |
